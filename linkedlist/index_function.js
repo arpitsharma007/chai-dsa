@@ -123,4 +123,18 @@ class LinkedList {
 
     console.log(listValues.join(" -> "));
   }
+
+  reverseAList() {
+    previous = null;
+    next = null;
+    current = this.head;
+
+    while (current) {
+      next = current.next;
+      current.next = previous;
+      previous = current;
+      current = next;
+    }
+    this.head = previous;
+  }
 }
