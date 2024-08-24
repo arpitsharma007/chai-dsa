@@ -17,3 +17,14 @@ function firstOccurance(arr, findMe, currIndex) {
 
 console.log(firstOccurance([3, 4, 1, 8, 1, 7], 1, 0));
 
+function recursiveFirstOcc(arr, findMe, currIndex) {
+  if (arr.length === currIndex) {
+    return -1;
+  }
+
+  if (arr[currIndex] === findMe) {
+    return currIndex;
+  }
+
+  return recursiveFirstOcc(arr, findMe, currIndex + 1);
+}
